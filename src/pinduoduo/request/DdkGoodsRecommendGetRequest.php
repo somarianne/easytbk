@@ -15,6 +15,10 @@ class DdkGoodsRecommendGetRequest implements  RequestInterface
 
     private $channelType;
 
+    private $catId;
+
+    private $customParameters;
+
 
 
     public function setOffset($offset)
@@ -47,6 +51,26 @@ class DdkGoodsRecommendGetRequest implements  RequestInterface
         return $this->channelType;
     }
 
+    public function setCatId($catId)
+    {
+        $this->catId = $catId;
+    }
+
+    public function getCatId()
+    {
+        return $this->catId;
+    }
+
+    public function setCustomParameters($customParameters)
+    {
+        $this->customParameters = $customParameters;
+    }
+
+    public function getCustomParameters()
+    {
+        return $this->customParameters;
+    }
+
     public function getParams()
     {
         $params = [
@@ -54,6 +78,8 @@ class DdkGoodsRecommendGetRequest implements  RequestInterface
             'offset'       => $this->offset,
             'limit'        => $this->limit,
             'channel_type' => intval($this->channelType),
+            'cat_id'       => $this->catId,
+            'custom_parameters'       => $this->customParameters,
         ];
         return $params;
     }

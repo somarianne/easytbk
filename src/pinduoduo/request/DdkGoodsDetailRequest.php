@@ -18,6 +18,16 @@ class DdkGoodsDetailRequest implements RequestInterface
      */
     private $goodsIdList;
 
+    private $customParameters;
+
+    private $goodsSign;
+
+    private $pid;
+    
+    private $searchId;
+    
+    private $zsDuoId;
+
     public function setType($type)
     {
         $this->type = $type;
@@ -39,11 +49,66 @@ class DdkGoodsDetailRequest implements RequestInterface
         return $this->goodsIdList;
     }
 
+    public function setCustomParameters($customParameters)
+    {
+        $this->customParameters = $customParameters;
+    }
+
+    public function getCustomParameters()
+    {
+        return $this->customParameters;
+    }
+
+    public function setGoodsSign($goodsSign)
+    {
+        $this->goodsSign = $goodsSign;
+    }
+
+    public function getGoodsSign()
+    {
+        return $this->goodsSign;
+    }
+
+    public function setPid($pid)
+    {
+        $this->pid = $pid;
+    }
+
+    public function getPid()
+    {
+        return $this->pid;
+    }
+
+    public function setSearchId($searchId)
+    {
+        $this->searchId = $searchId;
+    }
+
+    public function getSearchId()
+    {
+        return $this->searchId;
+    }
+
+    public function setZsDuoId($zsDuoId)
+    {
+        $this->zsDuoId = $zsDuoId;
+    }
+
+    public function getZsDuoId()
+    {
+        return $this->zsDuoId;
+    }
+
     public function getParams()
     {
         return [
             'type'          => $this->type,
-            'goods_id_list' => $this->goodsIdList
+            'goods_id_list' => $this->goodsIdList,
+            'goods_sign'    => $this->goodsSign,
+            'pid'           => $this->pid,
+            'search_id'     => $this->searchId,
+            'zs_duo_id'     => $this->zsDuoId,
+            'custom_parameters'       => $this->customParameters,
         ];
     }
 }
